@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    vector<int> arr{14,2,13,5,6,7,2,14,12,1,16,9};
+    vector<vector<int>> res;
+    int n = arr.size();
+    int sum = 10;
+    sort(arr.begin(), arr.end());
+    for(int i= 0;  i< n-3; i++) // (n-3) because here we need 3 nos. only in our result, so [(n-3),j,k] will make the last triplet!
+    {
+        int j = i+1;
+        int k = n-1;
+        while (j < k)
+        {
+            int currentSum = arr[i];
+            currentSum+= j;
+            currentSum+= k;
+            if (currentSum == sum)
+            {
+                res.push_back({arr[i], j, k});
+                j++;
+                k--;
+            }
+            else if (currentSum <= sum)
+                j++;
+            else
+                k--;
+        }
+    
+        for(auto v: res)
+        {
+            for(auto it: v)
+            {
+                cout<< it<< ",";
+            }
+            cout<< endl;
+        }
+    }
+    return 0;
+}
