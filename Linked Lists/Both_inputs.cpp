@@ -31,8 +31,8 @@ Node* push_front(){
     int data;
     cin>> data;
 
-    Node* head = NULL;
-    Node* tail = NULL;
+    Node* head = NULL; // assign NULL at the defination to avoid "segmentation Fault"
+    Node* tail = NULL; // assign NULL at the defination to avoid "segmentation Fault"
 
     while(data != -1){
         Node* n = new Node(data);
@@ -56,8 +56,8 @@ Node* push_back(){
     int data;
     cin>> data;
 
-    Node* head = NULL;
-    Node* tail = NULL;
+    Node* head = NULL; // to avoid seg.fault
+    Node* tail = NULL; // to avoid seg. fault
 
     while(data != -1){
         Node* n = new Node(data);
@@ -67,8 +67,9 @@ Node* push_back(){
             tail = n;
         }
         else{
-            tail->next = n;
-            tail = n;
+            tail->next = n; // Coneecting the nodes! Insert data at the  end of list
+            tail = n; // update the tail
+            // or, tail = tail->next;
         }
         cin>> data;
     }
