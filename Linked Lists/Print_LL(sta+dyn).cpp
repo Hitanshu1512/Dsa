@@ -23,11 +23,11 @@ void print(Node* head){
 
 int main()
 {
-	//dyn
+	//dynamic
 	Node* n1 = new Node(10);
 	Node* n2 = new Node(20);
 
-	//sta
+	//static
 	Node n3(30);
 	Node n4(40);
 
